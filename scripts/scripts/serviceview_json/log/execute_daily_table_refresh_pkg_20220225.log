@@ -1,0 +1,7 @@
+[2022-02-25 00:30:01] | execute_daily_table_refresh_pkg | Starting To Execute Script execute_daily_table_refresh_pkg
+[2022-02-25 00:30:01] | execute_daily_table_refresh_pkg | Directory Sucessfully Changed To /opt/ontology/scripts/serviceview_json/script.
+[2022-02-25 04:00:07] | execute_daily_table_refresh_pkg | All Service View Export Completed Sucessfully
+[2022-02-25 04:00:07] | execute_daily_table_refresh_pkg | Daily Table Refresh package Will Be Triggered Now
+[2022-02-25 04:45:04] | execute_daily_table_refresh_pkg | SQL Block Execution Completed.
+[2022-02-25 04:45:04] | execute_daily_table_refresh_pkg | DAILY_TABLE_REFRESH package Execution Completed Sucessfully.
+[2022-02-25 04:45:04] | execute_daily_table_refresh_pkg | calling script GenerateCSVFroGate22Services.sh

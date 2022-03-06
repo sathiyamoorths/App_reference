@@ -1,0 +1,18 @@
+[2022-02-25 23:00:01] | stratus_fullview_json_create | Directory changed to /opt/ontology/scripts/serviceview_json/script
+[2022-02-25 23:00:01] | stratus_fullview_json_create | Counter initialised to 0
+[2022-02-25 23:00:01] | stratus_fullview_json_create | Stratus Data Refresh package completed successfully
+[2022-02-25 23:00:01] | stratus_fullview_json_create | Spooling JSON Query from DB
+[2022-02-25 23:00:02] | stratus_fullview_json_create | Spool file stratus_query created
+[2022-02-25 23:00:02] | stratus_fullview_json_create | File stratus_query deleted
+[2022-02-25 23:00:02] | stratus_fullview_json_create | Formated spooled file exists
+[2022-02-25 23:00:02] | stratus_fullview_json_create | Formated spooled file deleted
+[2022-02-25 23:00:02] | stratus_fullview_json_create | Fetching Stratus-Full-View-Json.JSON data from config table
+[2022-02-25 23:06:09] | stratus_fullview_json_create | Data spool from DB successful
+[2022-02-25 23:06:09] | stratus_fullview_json_create | remove last char ','
+[2022-02-25 23:06:09] | stratus_fullview_json_create | add '[' at start
+[2022-02-25 23:06:10] | stratus_fullview_json_create | add '}]' at end
+[2022-02-25 23:06:10] | stratus_fullview_json_create | remove '\' from file
+[2022-02-25 23:06:11] | stratus_fullview_json_create | Stratus View JSON file exists. Checking JSON format
+[2022-02-25 23:06:21] | stratus_fullview_json_create | Deleting temporary JSON File
+[2022-02-25 23:06:21] | stratus_fullview_json_create | Taking Backup of Stratusview JSON
+[2022-02-25 23:06:21] | stratus_fullview_json_create | Script executed successfully

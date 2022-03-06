@@ -1,0 +1,67 @@
+[2022-02-25 00:30:01] | serviceview_json_create | Script Execution Started
+[2022-02-25 00:30:01] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 1 Times
+[2022-02-25 00:35:01] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 2 Times
+[2022-02-25 00:40:01] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 3 Times
+[2022-02-25 00:45:02] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 4 Times
+[2022-02-25 00:50:02] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 5 Times
+[2022-02-25 00:55:02] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 6 Times
+[2022-02-25 01:00:02] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 7 Times
+[2022-02-25 01:05:02] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 8 Times
+[2022-02-25 01:10:02] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 9 Times
+[2022-02-25 01:15:02] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 10 Times
+[2022-02-25 01:20:03] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 11 Times
+[2022-02-25 01:25:03] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 12 Times
+[2022-02-25 01:30:03] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 13 Times
+[2022-02-25 01:35:03] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 14 Times
+[2022-02-25 01:40:03] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 15 Times
+[2022-02-25 01:45:03] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 16 Times
+[2022-02-25 01:50:03] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 17 Times
+[2022-02-25 01:55:04] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 18 Times
+[2022-02-25 02:00:04] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 19 Times
+[2022-02-25 02:05:04] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 20 Times
+[2022-02-25 02:10:04] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 21 Times
+[2022-02-25 02:15:04] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 22 Times
+[2022-02-25 02:20:04] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 23 Times
+[2022-02-25 02:25:04] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 24 Times
+[2022-02-25 02:30:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 25 Times
+[2022-02-25 02:35:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 26 Times
+[2022-02-25 02:40:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 27 Times
+[2022-02-25 02:45:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 28 Times
+[2022-02-25 02:50:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 29 Times
+[2022-02-25 02:55:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 30 Times
+[2022-02-25 03:00:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 31 Times
+[2022-02-25 03:05:05] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 32 Times
+[2022-02-25 03:10:06] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 33 Times
+[2022-02-25 03:15:06] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 34 Times
+[2022-02-25 03:20:06] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 35 Times
+[2022-02-25 03:25:06] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 36 Times
+[2022-02-25 03:30:06] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 37 Times
+[2022-02-25 03:35:06] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 38 Times
+[2022-02-25 03:40:06] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 39 Times
+[2022-02-25 03:45:07] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 40 Times
+[2022-02-25 03:50:07] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 41 Times
+[2022-02-25 03:55:07] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 42 Times
+[2022-02-25 04:00:07] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 43 Times
+[2022-02-25 04:05:07] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 44 Times
+[2022-02-25 04:10:07] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 45 Times
+[2022-02-25 04:15:07] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 46 Times
+[2022-02-25 04:20:08] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 47 Times
+[2022-02-25 04:25:08] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 48 Times
+[2022-02-25 04:30:08] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 49 Times
+[2022-02-25 04:35:08] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 50 Times
+[2022-02-25 04:40:08] | serviceview_json_create | waiting for DAILY_TABLE_REFRESH to complete, going for sleep 51 Times
+[2022-02-25 04:45:08] | serviceview_json_create | Spool File Created Sucessfully
+[2022-02-25 04:45:08] | serviceview_json_create | JSON Execution Log Inserted Into DB
+[2022-02-25 04:45:08] | serviceview_json_create | Starting JSON HFD-NonVector-Services
+[2022-02-25 04:45:38] | serviceview_json_create | Starting JSON NonSecure-Project-22-JSON
+[2022-02-25 04:46:08] | serviceview_json_create | Starting JSON NonSecure-Project-19,20,24,25-JSON
+[2022-02-25 04:46:39] | serviceview_json_create | Starting JSON Project-064-JSON
+[2022-02-25 04:47:09] | serviceview_json_create | Starting JSON NetworkView-BLUE_MPLS
+[2022-02-25 04:47:39] | serviceview_json_create | Starting JSON Project-34-JSON
+[2022-02-25 04:48:09] | serviceview_json_create | Starting JSON NonSecure-NetworkView-THUS_MSPP
+[2022-02-25 04:48:39] | serviceview_json_create | Starting JSON nonSecureMsan
+[2022-02-25 04:49:09] | serviceview_json_create | Starting JSON NetworkView-THUS_MPLS
+[2022-02-25 05:01:26] | serviceview_json_create | All Json creation completed
+[2022-02-25 05:01:26] | serviceview_json_create | Temporary File /opt/ontology/scripts/serviceview_json/config/jsonNameList.txt Deleted
+[2022-02-25 05:01:26] | serviceview_json_create | JSON Execution Log Updated In DB
+[2022-02-25 05:01:26] | serviceview_json_create | Script Execution Completed

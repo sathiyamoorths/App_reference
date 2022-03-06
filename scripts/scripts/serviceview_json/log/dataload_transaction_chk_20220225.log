@@ -1,0 +1,4 @@
+[2022-02-25 13:00:01] | dataload_transaction_chk | Starting To Execute Script dataload_transaction_chk
+[2022-02-25 13:00:01] | dataload_transaction_chk | Directory Sucessfully Changed To /opt/ontology/scripts/serviceview_json/script.
+[2022-02-25 13:00:01] | dataload_transaction_chk | Dataload Transaction On Server-2 10.196.156.54 Completed Successfully.
+[2022-02-25 13:00:01] | dataload_transaction_chk | Script Executed Successfully.

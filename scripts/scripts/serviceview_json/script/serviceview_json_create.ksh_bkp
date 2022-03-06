@@ -1,0 +1,181 @@
+#!/bin/ksh
+{ set +x ;} 2> /dev/null
+DIRNAME="/opt/ontology/scripts/serviceview_json/script"
+. ${DIRNAME}/setenv.ksh
+SCRIPTNAME="serviceview_json_create"
+RUN_DATE=`date +%Y%m%d`
+start_time=`date '+%Y%m%d %H:%M:%S'`
+LOG_FILE=${LOG_DIR}/${SCRIPTNAME}_${RUN_DATE}.log
+echo "Log File Name :  ${LOG_FILE}"
+time_stmp=`cat ${CONFIG_DIR}/timestamp.txt`
+
+counter=0
+jsonExecutionCounter=0
+#IntialisenoOfParallelProcess=$(<${CONFIG_DIR}/noOfParallelProcess.txt)
+IntialisenoOfParallelProcess=110
+while [ : ]
+do
+
+flagvalue1=`${SQL}<< END
+
+WHENEVER SQLERROR EXIT sql.sqlcode; 
+set serveroutput on;
+set pages 0;
+set head off;
+set linesize 100;
+set trimspool on;
+set feedback off; 
+set echo off;
+
+SELECT TRIM(COUNT(FLAG_VALUE))
+FROM ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+WHERE TRANSACTION_DATE=TO_CHAR(SYSDATE,'YYYY-MM-DD')
+AND FLAG_VALUE        ='COMPLETED'
+AND SERVER_NAME       ='DB_SERVER'
+AND VIEW_DETAIL       ='DAILY_TABLE_REFRESH';
+EXIT; 
+END`
+
+echo ${flagvalue1}
+
+
+
+if [ "$flagvalue1" -gt 0 ]
+then
+	
+	
+	
+
+
+	${SQL1}<< END >/dev/null
+
+			 
+	SET NEWP 0 SPACE 0 PAGES 0 FEED OFF HEAD OFF TRIMS OFF TRIM OFF TAB OFF;
+	set colsep '@#@';
+	set pagesize 0;
+	SET LONG 50000;
+	set trimspool on; 
+	set trimout on;
+	set headsep on;
+	set linesize 32767;
+	set feedback off; 
+	set echo off; 
+	SET TAB OFF;
+	SET WRAP on;
+	set longchunksize 32767;
+
+	spool ${CONFIG_DIR}/jsonNameList.txt
+
+	SELECT TRIM(JSON_NAME) FROM SERVICEVIEW_JSON_CONFIG WHERE INCLUDE_YN='Y' AND SERVER_NAME='S1';
+
+	spool off
+
+	EXIT 
+END
+
+${SQL} << EOF 
+	WHENEVER SQLERROR EXIT sql.sqlcode;
+	SET ECHO OFF 
+	SET HEADING OFF
+
+	INSERT
+INTO ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+  (
+    TRANSACTION_DATE,
+    DETAIL,
+    FLAG_VALUE,
+    TRANSACTION_TIME,
+    JSON_START_DATE,
+    JSON_END_DATE,
+    SERVER_NAME,
+    VIEW_DETAIL
+  )
+SELECT TO_CHAR(SYSDATE,'YYYY-MM-DD')       AS TRANSACTION_DATE,
+  'JSON Creation'                          AS DETAIL,
+  'STARTED'                                AS FLAG_VALUE,
+  TO_CHAR(SYSDATE,'DD-MM-YYYY HH24:MI:SS') AS TRANSACTION_TIME,
+  TO_CHAR(SYSDATE,'DD-MM-YYYY HH24:MI:SS') AS JSON_START_DATE,
+  NULL                                     AS JSON_END_DATE,
+  'S1'                              AS SERVER_NAME,
+  'JSON_CREATION_S1'                    AS VIEW_DETAIL
+FROM DUAL;
+COMMIT;
+
+EOF
+
+	noOfJsonExecution=$(wc -l ${CONFIG_DIR}/jsonNameList.txt | cut -d " " -f 1 )
+	
+	while read configLine ;
+	do
+
+	configLine1="$(echo -e "${configLine}" | tr -d '[[:space:]]' | tr -d '\015' | tr -d '\n' )"
+	
+	ksh -x /opt/ontology/scripts/serviceview_json/script/serviceview_json_from_db.ksh $configLine1 &
+
+	
+	
+	jsonExecutionCounter=`expr $jsonExecutionCounter + 1`
+	echo $jsonExecutionCounter
+	sleep 10
+
+	[[ $((jsonExecutionCounter%IntialisenoOfParallelProcess)) -eq 0 ]] && wait
+	done < ${CONFIG_DIR}/jsonNameList.txt
+
+	wait
+			
+	f_write_to_log "All Json creation completed successfully"
+	
+	
+
+
+	
+	
+			
+	cd ${CONFIG_DIR}
+	if [ $? -eq 0 ]
+	then
+		rm jsonNameList.txt
+	fi
+VALUE=`${SQL} << EOF
+UPDATE ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+SET FLAG_VALUE        ='COMPLETED',
+  TRANSACTION_TIME    =TO_CHAR(SYSDATE,'DD-MM-YYYY HH24:MI:SS'),
+  JSON_END_DATE  =TO_CHAR(SYSDATE,'DD-MM-YYYY HH24:MI:SS')
+WHERE TRANSACTION_DATE= TO_CHAR(SYSDATE,'YYYY-MM-DD')
+AND FLAG_VALUE        ='STARTED'
+AND SERVER_NAME       = 'S1'
+AND VIEW_DETAIL       = 'JSON_CREATION_S1';
+COMMIT;
+EOF`		
+	f_write_to_log "exit from JSON script"
+	exit 0
+
+	
+else
+f_write_to_log "count value is $counter"
+counter=`expr $counter + 1`
+f_write_to_log "waiting for DAILY_TABLE_REFRESH to complete, going for sleep"
+sleep 5m
+if [ "$counter" -eq 36 ]
+then
+
+f_write_to_log "DAILY_TABLE_REFRESH didn'n ran. So, quit script"
+echo "Hi," > ${CONFIG_DIR}/JSON_error.txt
+echo "JSON in SERVER_1 didnot start in DEV Env. please investigate" >> ${CONFIG_DIR}/JSON_error.txt
+echo "From," >> ${CONFIG_DIR}/JSON_error.txt
+echo "Ontology Auto-JSON verification" >> ${CONFIG_DIR}/JSON_error.txt
+
+cat ${CONFIG_DIR}/JSON_error.txt| mailx -s "JSON NOT COMPLETED" subhrajyoti.basak@vodafone.com 
+rm ${CONFIG_DIR}/JSON_error.txt
+
+exit 10
+fi
+
+#continue
+fi
+
+
+
+done
+
+

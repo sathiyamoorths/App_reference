@@ -1,0 +1,197 @@
+#!/bin/ksh
+{ set +x ;} 2> /dev/null
+DIRNAME="/opt/ontology/scripts/serviceview_json/script"
+. ${DIRNAME}/setenv.ksh
+SCRIPTNAME="execute_daily_table_refresh_pkg"
+RUN_DATE=`date +%Y%m%d`
+LOG_FILE=${LOG_DIR}/${SCRIPTNAME}_${RUN_DATE}.log
+echo "Log File Name :  ${LOG_FILE}"
+time_stamp=`date "+%Y-%m-%d %H:%M:%S"`
+
+echo $time_stamp > ${CONFIG_DIR}/timestamp.txt
+
+counter=0
+
+while [ : ]
+do
+
+flagvalue1=`${SQL}<< END
+WHENEVER SQLERROR EXIT sql.sqlcode; 
+set serveroutput on;
+set pages 0;
+set head off;
+set linesize 100;
+set trimspool on;
+set feedback off; 
+set echo off;
+
+select TRIM(count(FLAG_VALUE)) from PRT_U_VIEW_TRANSACTION_STATUS where TRANSACTION_DATE=TO_CHAR(sysdate,'YYYY-MM-DD') AND FLAG_VALUE='PENDING' AND SERVER_NAME='MAIN1' AND VIEW_DETAIL='Service View' ;
+EXIT; 
+END`
+
+echo ${flagvalue1}
+	
+flagvalue2=`${SQL}<< END
+WHENEVER SQLERROR EXIT sql.sqlcode; 
+set serveroutput on;
+set pages 0;
+set head off;
+set linesize 100;
+set trimspool on;
+set feedback off; 
+set echo off;
+
+select TRIM(count(FLAG_VALUE)) from PRT_U_VIEW_TRANSACTION_STATUS where TRANSACTION_DATE=TO_CHAR(sysdate,'YYYY-MM-DD') AND FLAG_VALUE='PENDING' AND SERVER_NAME='MAIN2' AND VIEW_DETAIL='Service View' ;
+EXIT; 
+END`
+
+echo ${flagvalue2}
+	
+flagvalue3=`${SQL}<< END
+WHENEVER SQLERROR EXIT sql.sqlcode; 
+set serveroutput on;
+set pages 0;
+set head off;
+set linesize 100;
+set trimspool on;
+set feedback off; 
+set echo off;
+
+select TRIM(count(FLAG_VALUE)) from PRT_U_VIEW_TRANSACTION_STATUS where TRANSACTION_DATE=TO_CHAR(sysdate,'YYYY-MM-DD') AND FLAG_VALUE='PENDING' AND SERVER_NAME='MAIN3' AND VIEW_DETAIL='Service View' ;
+EXIT; 
+END`
+
+echo ${flagvalue3}
+
+flagvalue4=`${SQL}<< END
+WHENEVER SQLERROR EXIT sql.sqlcode; 
+set serveroutput on;
+set pages 0;
+set head off;
+set linesize 100;
+set trimspool on;
+set feedback off; 
+set echo off;
+
+select TRIM(count(FLAG_VALUE)) from PRT_U_VIEW_TRANSACTION_STATUS where TRANSACTION_DATE=TO_CHAR(sysdate,'YYYY-MM-DD') AND FLAG_VALUE='PENDING' AND SERVER_NAME='MAIN4' AND VIEW_DETAIL='Service View' ;
+EXIT; 
+END`
+
+echo ${flagvalue4}
+	
+if [ "$flagvalue1" -gt 0 ] && [ "$flagvalue2" -gt 0 ] && [ "$flagvalue3" -gt 0 ] && [ "$flagvalue4" -gt 0 ]
+then
+f_write_to_log "DAILY_TABLE_REFRESH package has triggered "
+
+${SQL} << EOF >  ${LOG_DIR}/${SCRIPTNAME}_${RUN_DATE}.log
+
+WHENEVER SQLERROR EXIT sql.sqlcode; 
+set pagesize 0; 
+SET LONG 50000; 
+set trimspool on; 
+set trimout on; 
+set headsep on; 
+set linesize 32767; 
+set feedback off; 
+set echo off;
+
+UPDATE ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+SET DETAIL        ='Service View Export' ,
+  FLAG_VALUE      ='COMPLETED' ,
+  VIEW_DETAIL       ='ONTOLOGY_TRANSACTION',
+  TRANSACTION_TIME=TO_CHAR(TO_DATE(TO_CHAR(SYSDATE,'DD-MM-YYYY')
+  || ' '
+  ||SUBSTR(TRANSACTION_TIME,0,8),'DD-MM-YYYY HH24:MI:SS'),'DD-MM-YYYY HH24:MI:SS')
+WHERE TRANSACTION_DATE=TO_CHAR(SYSDATE,'YYYY-MM-DD')
+AND VIEW_DETAIL       ='Service View'
+AND SERVER_NAME      IN ('MAIN1','MAIN2','MAIN3','MAIN4')
+AND FLAG_VALUE='PENDING';
+COMMIT;
+
+UPDATE ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+SET SERVER_NAME ='S1'
+WHERE TRANSACTION_DATE=TO_CHAR(SYSDATE,'YYYY-MM-DD')
+AND VIEW_DETAIL       ='ONTOLOGY_TRANSACTION'
+AND SERVER_NAME  ='MAIN1'
+AND FLAG_VALUE='COMPLETED';
+COMMIT;
+UPDATE ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+SET SERVER_NAME ='S2'
+WHERE TRANSACTION_DATE=TO_CHAR(SYSDATE,'YYYY-MM-DD')
+AND VIEW_DETAIL       ='ONTOLOGY_TRANSACTION'
+AND SERVER_NAME  ='MAIN2'
+AND FLAG_VALUE='COMPLETED';
+COMMIT;
+UPDATE ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+SET SERVER_NAME ='S3'
+WHERE TRANSACTION_DATE=TO_CHAR(SYSDATE,'YYYY-MM-DD')
+AND VIEW_DETAIL       ='ONTOLOGY_TRANSACTION'
+AND SERVER_NAME  ='MAIN3'
+AND FLAG_VALUE='COMPLETED';
+COMMIT;
+UPDATE ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS
+SET SERVER_NAME ='S4'
+WHERE TRANSACTION_DATE=TO_CHAR(SYSDATE,'YYYY-MM-DD')
+AND VIEW_DETAIL       ='ONTOLOGY_TRANSACTION'
+AND SERVER_NAME  ='MAIN4'
+AND FLAG_VALUE='COMPLETED';
+COMMIT;
+
+
+INSERT INTO ONTOLOGY.PRT_U_VIEW_TRANSACTION_STATUS(TRANSACTION_DATE,
+DETAIL,
+FLAG_VALUE,
+TRANSACTION_TIME,
+JSON_START_DATE,
+JSON_END_DATE,
+SERVER_NAME,
+VIEW_DETAIL)
+
+SELECT TO_CHAR(SYSDATE,'YYYY-MM-DD') AS TRANSACTION_DATE,
+'Datamart Creation' AS DETAIL,
+'STARTED' AS FLAG_VALUE,
+TO_CHAR(SYSDATE,'DD-MM-YYYY HH24:MI:SS') AS TRANSACTION_TIME,
+NULL AS JSON_START_DATE,
+NULL AS JSON_END_DATE,
+'DB_SERVER' AS SERVER_NAME,
+'DAILY_TABLE_REFRESH' AS VIEW_DETAIL FROM DUAL;
+
+COMMIT;
+
+BEGIN
+DAILY_TABLE_REFRESH.Run_all();
+END; 
+/
+EOF
+
+f_write_to_log "calling script GenerateCSVFroGate22Services.sh"
+sh -x /opt/ontology/scripts/gate22-csv-export/GenerateCSVFroGate22Services.sh &
+exit 0
+	
+else
+
+counter=`expr $counter + 1`
+f_write_to_log "Count value is $counter"
+sleep 5m
+if [ "$counter" -eq 36 ]
+then
+
+f_write_to_log "Ontology transaction failed today so, DAILY_TABLE_REFRESH not triggered today"
+echo "Hi," > ${CONFIG_DIR}/DB_error.txt
+echo "Ontology transaction failed today so, DAILY_TABLE_REFRESH not triggered today in DEV Env. please investigate" >> ${CONFIG_DIR}/DB_error.txt
+echo "From," >> ${CONFIG_DIR}/DB_error.txt
+echo "Ontology Auto-JSON verification" >> ${CONFIG_DIR}/DB_error.txt
+
+cat ${CONFIG_DIR}/DB_error.txt| mailx -s "DAILY TABLE REFRESH NOT COMPLETED" subhrajyoti.basak@vodafone.com 
+rm ${CONFIG_DIR}/DB_error.txt
+
+exit 10
+
+fi
+
+fi
+done
+	
+	
+	
+	

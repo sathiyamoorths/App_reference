@@ -1,0 +1,62 @@
+[2022-02-25 00:30:01] | batchview_json_create | Directory changed to /opt/ontology/scripts/serviceview_json/script
+[2022-02-25 00:30:01] | batchview_json_create | Counter initialised to 0
+[2022-02-25 00:30:01] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 00:35:01] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 00:40:01] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 00:45:02] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 00:50:02] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 00:55:02] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:00:02] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:05:02] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:10:02] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:15:02] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:20:03] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:25:03] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:30:03] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:35:03] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:40:03] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:45:03] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:50:03] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 01:55:04] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:00:04] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:05:04] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:10:04] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:15:04] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:20:04] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:25:04] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:30:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:35:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:40:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:45:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:50:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 02:55:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:00:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:05:05] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:10:06] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:15:06] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:20:06] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:25:06] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:30:06] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:35:06] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:40:06] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:45:07] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:50:07] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 03:55:07] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 04:00:07] | batchview_json_create | waiting for Batch View Export to complete, going for sleep
+[2022-02-25 04:05:07] | batchview_json_create | Batch View Export completed in all servers
+[2022-02-25 04:05:07] | batchview_json_create | Spooling JSON Query from DB
+[2022-02-25 04:05:07] | batchview_json_create | Spool file batch_cust_query created
+[2022-02-25 04:05:07] | batchview_json_create | File batch_cust_query deleted
+[2022-02-25 04:05:07] | batchview_json_create | Formated spooled file exists
+[2022-02-25 04:05:07] | batchview_json_create | Formated spooled file deleted
+[2022-02-25 04:05:07] | batchview_json_create | Fetching Full-Batch-CustomerView-Json.JSON data from config table
+[2022-02-25 04:43:33] | batchview_json_create | Data spool from DB successful
+[2022-02-25 04:43:33] | batchview_json_create | remove last char ','
+[2022-02-25 04:43:34] | batchview_json_create | add '[' at start
+[2022-02-25 04:43:35] | batchview_json_create | add '}]' at end
+[2022-02-25 04:43:36] | batchview_json_create | remove '\' from file
+[2022-02-25 04:43:37] | batchview_json_create | rename json from Full-Batch-CustomerView-Json_serviceview_data.txt to Full-Batch-CustomerView-Json.JSON
+[2022-02-25 04:43:37] | batchview_json_create | Batchview JSON file exists. Checking JSON format
+[2022-02-25 04:43:57] | batchview_json_create | Deleting temporary JSON File
+[2022-02-25 04:43:57] | batchview_json_create | Taking Backup of Batchview JSON
+[2022-02-25 04:43:57] | batchview_json_create | Script executed successfully
