@@ -1,0 +1,33 @@
++ . /opt/ontology/scripts/Filter_view_dataload/ontyd2.env
+++ export ORACLE_BASE=/opt/oracle
+++ ORACLE_BASE=/opt/oracle
+++ export ORACLE_TERM=vt100
+++ ORACLE_TERM=vt100
+++ export ORACLE_HOME=/opt/oracle/product/12.1.0.client
+++ ORACLE_HOME=/opt/oracle/product/12.1.0.client
+++ export LD_LIBRARY_PATH=:/opt/oracle/product/12.1.0.client/lib
+++ LD_LIBRARY_PATH=:/opt/oracle/product/12.1.0.client/lib
+++ export PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/oracle/product/12.1.0.client//bin:/opt/oracle/product/12.1.0.client/bin
+++ PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/oracle/product/12.1.0.client//bin:/opt/oracle/product/12.1.0.client/bin
+++ export ORACLE_SID=CPTAD1
+++ ORACLE_SID=CPTAD1
+++ export TERM=vt100
+++ TERM=vt100
+++ export EDITOR=/bin/vi
+++ EDITOR=/bin/vi
+++ SQL1='/opt/oracle/product/12.1.0.client/bin/sqlplus -s ONTOLOGY/ONTOLOGY01@KONAP1-DB.ad.plc.cwintra.com:1521/KONAP1'
+++ SQLLOAD1='/opt/oracle/product/12.1.0.client/bin/sqlldr ONTOLOGY/ONTOLOGY01@KONAP1-DB.ad.plc.cwintra.com:1521/KONAP1'
+++ EXCEL_DIR=/opt/SP/osnadmin/ohs/Middleware/oracle/instances/instance1/config/OHS/ohs1/htdocs/osn-doc/docs_excel
+++ date +%Y%m%d
++ DATETIME=20180309
++ dos2unix /opt/ontology/ontology-pr-main/input/Filter-View-Upload/upload/Sample_FilteredServiceViewTemplate11.csv
+dos2unix: converting file /opt/ontology/ontology-pr-main/input/Filter-View-Upload/upload/Sample_FilteredServiceViewTemplate11.csv to UNIX format ...
++ DESTINATION=/opt/ontology/ontology-pr-main/input/Filter-View-Upload/upload
++ cd /opt/ontology/ontology-pr-main/input/Filter-View-Upload/upload
++ for audname in '*.csv'
++ echo Sample_FilteredServiceViewTemplate11.csv
++ PAT_FIL=/opt/ontology/ontology-pr-main/input/Filter-View-Upload/upload/Sample_FilteredServiceViewTemplate11.csv
++ sed 's|CGFILENAME|/opt/ontology/ontology-pr-main/input/Filter-View-Upload/upload/Sample_FilteredServiceViewTemplate11.csv|g' /opt/ontology/scripts/Filter_view_dataload/dataload.ctl
++ /opt/oracle/product/12.1.0.client/bin/sqlldr ONTOLOGY/ONTOLOGY01@KONAP1-DB.ad.plc.cwintra.com:1521/KONAP1 control=/opt/ontology/scripts/Filter_view_dataload/dataload_temp.ctl,LOG=/opt/ontology/scripts/Filter_view_dataload/filter_view_load.log,ERRORS=100
++ gzip -c /opt/ontology/ontology-pr-main/input/Filter-View-Upload/upload/Sample_FilteredServiceViewTemplate11.csv
++ /opt/oracle/product/12.1.0.client/bin/sqlplus -s ONTOLOGY/ONTOLOGY01@KONAP1-DB.ad.plc.cwintra.com:1521/KONAP1

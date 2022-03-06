@@ -1,0 +1,15 @@
+*.csv
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Thu Nov 5 10:30:01 2020
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+
+0 rows created.
+
+
+0 rows deleted.
+
+
+Commit complete.
+

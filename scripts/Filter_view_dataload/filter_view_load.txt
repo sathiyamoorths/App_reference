@@ -1,0 +1,12 @@
+*.csv
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Wed Mar 7 18:00:01 2018
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+insert	into  service_view_filter_archieve(serviceid,filter,USERS, INSERTION_DATE) (select serviceid,filter, USERS ,INSERTION_DATE from service_view_filter where INSERTION_DATE <= sysdate -4)
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+

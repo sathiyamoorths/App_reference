@@ -1,0 +1,12 @@
+env=/opt/ontology/scripts/configuration/ontyd2.env
+
+annotation_load=/opt/ontology/input/Annoations-File-Upload/
+annotation_script=/opt/ontology/scripts/Annotations-dataload/
+
+order_load=/opt/ontology/input/Order-File-Dataload/
+order_script=/opt/ontology/scripts/Order-dataload/
+
+green_frame=/opt/ontology/scripts/green_frame_atm/
+
+blue_frame=/opt/ontology/scripts/blue_frame_atm/
+

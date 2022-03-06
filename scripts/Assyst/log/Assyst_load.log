@@ -1,0 +1,7 @@
+2022-02-15 22:00:07 [13583] INFO: Connecting to Database ...
+2022-02-15 22:00:08 [13583] INFO: Connecting to Database: KONAP1-DB.ad.plc.cwintra.com/KONAP1
+2022-02-15 22:00:08 [13583] INFO: Database Version: 18.0.0.0.0
+2022-02-15 22:00:08 [13583] INFO: Connection to Database successful
+2022-02-15 22:00:08 [13583] INFO: Reading the files
+2022-02-15 22:00:11 [13583] INFO: Record Insertion into DB completed
+2022-02-15 22:00:11 [13583] INFO: Closing the Connections ... Exiting from script...

@@ -1,0 +1,176 @@
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Fri Dec 4 16:19:06 2020
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   /opt/ontology/scripts/maguire_manual_service_upload/script/dataload.ctl
+Data File:      /opt/ontology/scripts/maguire_manual_service_upload/upload/rmvNewline.csv
+  Bad File:     /opt/ontology/scripts/maguire_manual_service_upload/script/rmvNewline.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 100
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table MAGUIRE_TEMP_MANUAL_SERVICE, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+SEQUENCE_NO                         FIRST     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Sequence_no)"
+SERVICE_ID                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Service_ID)"
+NOMINATED_PARTY                      NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Nominated_Party)"
+CONTRACTUAL_CUSTOMER                 NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Contractual_Customer)"
+BILLING_CUSTOMER                     NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Billing_Customer)"
+PROJECT_ID                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Project_Id)"
+PID                                  NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:PID)"
+NPID                                 NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:NPID)"
+BATCH_ID                             NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Batch_ID)"
+MAGUIRE_STATUS                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Maguire_Status)"
+ACTION_OWNER                         NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Action_Owner)"
+SUB_GROUP                            NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Sub_Group)"
+COMPANY_REG_NO                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Company_Reg_No)"
+MARKET                               NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Market)"
+SEGMENT                              NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Segment)"
+CHANNEL                              NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Channel)"
+PRODUCT_NAME                         NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Product_Name)"
+PRODUCTS_COMMENTS                    NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Products_Comments)"
+BILLING_OPS_COMMENTS                 NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Billing_Ops_Comments)"
+MARGIN_MAX_COMMENTS                  NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Margin_Max_Comments)"
+ANALYSIS_COMMENTS                    NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Analysis_Comments)"
+ROOT_CAUSE                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Root_Cause)"
+PROV_SYSTEM                          NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Prov_System)"
+PROVISIONING_STATUS                  NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Provisioning_Status)"
+OLO_STATUS                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Olo_Status)"
+BILLING_STATUS                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Billing_Status)"
+CUSTOMER_CIRCUIT_REF                 NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Customer_Circuit_Ref)"
+PROV_START_DATE                      NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Prov_Start_Date)"
+PROV_CEASE_DATE                      NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Prov_Cease_Date)"
+SERVICE_AGE                          NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Service_Age)"
+BILLING_SYSTEM                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Billing_System)"
+BILLING_ACCOUNT_NUMBER               NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Billing_Account_Number)"
+ERASABLE_ACCOUNT                     NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Erasable_Account)"
+FIRST_BILLED_DATE                    NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:First_Billed_Date)"
+LATEST_BILLED_DATE                   NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Latest_Billed_Date)"
+LATEST_BILLED_AMOUNT                 NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Latest_Billed_Amount)"
+PRICE                                NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Price)"
+ONE_OFF_CHARGE                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:One_Off_Charge)"
+TOTAL_BILLED_AMOUNT                  NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Total_Billed_Amount)"
+EQUIPMENT_DETAILS                    NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Equipment_Details)"
+DDI                                  NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:DDI)"
+OLO_TAIL                             NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Olo_Tail)"
+OLO_PROVIDER                         NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Olo_Provider)"
+OLO_FIRST_INVOICED_DATE              NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Olo_First_Invoiced_Date)"
+OLO_LASTEST_INVOICED_DATE            NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Olo_Lastest_Invoiced_Date)"
+OLO_LATEST_INVOICED_AMOUNT           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Olo_Latest_Invoiced_Amount)"
+OLO_TOTAL_INVOICED_AMOUNT            NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Olo_Total_Invoiced_Amount)"
+UNDERBILL                            NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Underbill)"
+UNDERBILL_CAPPED_36                  NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Underbill_Capped_36)"
+OVERBILL                             NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Overbill)"
+OVERBILL_CAPPED_36                   NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Overbill_Capped_36)"
+UNDERCOST                            NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Undercost)"
+UNDERCOST_CAPPED_36                  NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Undercost_Capped_36)"
+OVERCOST                             NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Overcost)"
+OVERCOST_CAPPED_36                   NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Overcost_Capped_36)"
+RECOVERY_AMOUNT                      NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Recovery_Amount)"
+RECOVERY_DATE                        NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Recovery_Date)"
+PROVIDE_ORDER                        NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Provide_Order)"
+CEASE_ORDER                          NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Cease_Order)"
+ASSOCIATED_ORDERS                    NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Associated_Orders)"
+SITE_ADDRESS_2                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Site_Address_2)"
+SITE_ADDRESS_1                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Site_Address_1)"
+INCIDENT                             NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Incident)"
+DEBT_STATUS                          NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:Debt_Status)"
+
+value used for ROWS parameter changed from 64 to 15
+
+Table MAGUIRE_TEMP_MANUAL_SERVICE:
+  16 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 247680 bytes(15 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:            16
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Dec 04 16:19:06 2020
+Run ended on Fri Dec 04 16:19:10 2020
+
+Elapsed time was:     00:00:04.13
+CPU time was:         00:00:00.05

@@ -1,0 +1,27 @@
+SET PAGES 0;
+SET LINES 32767;
+SET TRIMS ON;
+SET ECHO OFF;
+SET WRAP OFF;
+SET TRIMSPOOL ON;
+SET FEEDBACK OFF;
+SET TERM OFF;
+SET HEAD OFF;
+SET VERIFY OFF;
+SET TIMING OFF;
+SET HEADING OFF;
+SET LINESIZE 500000;
+SET NUMWIDTH 20;
+SET NUMFORMAT 999999999999999999999999;
+SET LONG 50000;
+COLUMN TXT FORMAT A30;
+SET LONGCHUNKSIZE 30000;
+ALTER SESSION SET NLS_DATE_FORMAT='DD/MM/YYYY HH24:MI:SS';
+spool /opt/ontology/scripts/maguire_manual_service_upload/process/Maguire_Manual_Services_raw.csv;
+SELECT '"'||TRIM(Service_ID)||'",'||'"'||TRIM(Customer_Circuit_Ref)||'",'||'"'||TRIM(PID)||'",'||'"'||TRIM(Contractual_Customer)||'",'||'"'||TRIM(NPID)||'",'||'"'||TRIM(Nominated_Party)||'",'||'"'||TRIM(Company_Reg_No)||'",'||'"'||TRIM(Market)||'",'||'"'||TRIM(Segment)||'",'||'"'||TRIM(Channel)||'",'||'"'||TRIM(Prov_System)||'",'||'"'||TRIM(Product_Name)||'",'||'"'||TRIM(Provisioning_Status)||'",'||'"'||TRIM(Prov_Start_Date)||'",'||'"'||TRIM(Provide_Order)||'",'||'"'||TRIM(Prov_Cease_Date)||'",'||'"'||TRIM(Cease_Order)||'",'||'"'||TRIM(Associated_Orders)||'",'||'"'||TRIM(Site_Address_1)||'",'||'"'||TRIM(Site_Address_2)||'",'||'"'||TRIM(Equipment_Details)||'",'||'"'||TRIM(DDI)||'",'||'"'||TRIM(One_Off_Charge)||'",'||'"'||TRIM(Price)||'",'||'"'||TRIM(Billing_System)||'",'||'"'||TRIM(Billing_Account_Number)||'",'||'"'||TRIM(Billing_Customer)||'",'||'"'||TRIM(Billing_Status)||'",'||'"'||TRIM(First_Billed_Date)||'",'||'"'||TRIM(Latest_Billed_Date)||'",'||'"'||TRIM(Latest_Billed_Amount)||'",'||'"'||TRIM(Total_Billed_Amount)||'",'||'"'||TRIM(Olo_Tail)||'",'||'"'||TRIM(Olo_Provider)||'",'||'"'||TRIM(Olo_First_Invoiced_Date)||'",'||'"'||TRIM(Olo_Status)||'",'||'"'||TRIM(Olo_Lastest_Invoiced_Date)||'",'||'"'||TRIM(Olo_Latest_Invoiced_Amount)||'",'||'"'||TRIM(Olo_Total_Invoiced_Amount)||'",'||'"'||TRIM(Underbill)||'",'||'"'||TRIM(Underbill_Capped_36)||'",'||'"'||TRIM(Overbill)||'",'||'"'||TRIM(Overbill_Capped_36)||'",'||'"'||TRIM(Undercost)||'",'||'"'||TRIM(Undercost_Capped_36)||'",'||'"'||TRIM(Overcost)||'",'||'"'||TRIM(Overcost_Capped_36)||'",'||'"'||TRIM(Batch_ID)||'",'||'"'||TRIM(Maguire_Status)||'",'||'"'||TRIM(Sub_Group)||'",'||'"'||TRIM(Products_Comments)||'",'||'"'||TRIM(Billing_Ops_Comments)||'",'||'"'||TRIM(Margin_Max_Comments)||'",'||'"'||TRIM(Overall_Comments)||'",'||'"'||TRIM(Action_Owner)||'",'||'"'||TRIM(Root_Cause)||'",'||'"'||TRIM(Analysis_Comments)||'",'||'"'||TRIM(Recovery_Amount)||'",'||'"'||TRIM(Recovery_Date)||'",'||'"'||TRIM(Project_Id)||'",'||'"'||TRIM(Erasable_Account)||'",'||'"'||TRIM(Service_Type)||'""' FROM MAGUIRE_MANUAL_SERVICE;
+SPOOL OFF;
+EXIT;
+
+
+
+
