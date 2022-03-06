@@ -1,0 +1,24 @@
+/opt/ontology/input/Annoations-File-Upload/upload/output.csv
+Mar/4/16:00
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Sun Mar 4 16:00:01 2018
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Path used:      Conventional
+Commit point reached - logical record count 12
+
+Table ANNOTATION_VALIDATION_TEMP:
+  12 Rows successfully loaded.
+
+Check the log file:
+  /opt/ontology/scripts/Annotations-dataload/Annotations-load.log
+for more information about the load.
+  adding: Annotations_Upload_04MAR.csv (deflated 69%)
+  adding: output1.csv (deflated 77%)
+
+1 row created.
+
+
+Commit complete.
+

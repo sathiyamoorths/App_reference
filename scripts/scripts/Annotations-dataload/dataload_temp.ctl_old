@@ -1,0 +1,13 @@
+OPTIONS(skip=1)
+LOAD DATA 
+  infile               '/opt/ontology/input/Annoations-File-Upload/upload/formattedFile1.csv'          
+  APPEND into table  PRT_U_ANNOTATION
+WHEN (SERVICE_ID<> 'SERVICE_ID')
+  fields terminated by ","
+  optionally enclosed by '"'   
+  TRAILING NULLCOLS      
+  (SERVICE_ID,
+ATTRIBUTE_NAME,
+NEW_VALUE  char(4000),
+USER_NAME,
+INSERTION_DATE "SYSTIMESTAMP")

@@ -1,0 +1,53 @@
+#!/bin/sh
+. /opt/ontology/scripts/Annotations-dataload/ontydp.env
+
+
+target=/opt/ontology/input/Annoations-File-Upload/upload
+
+if test "$(ls -A "$target")"; then 
+    echo not empty,starting script >> /opt/ontology/scripts/Annotations-dataload/Annotations-load.log
+
+DATETIME=`date '+%Y%m%d'`
+
+
+
+dos2unix /opt/ontology/input/Annoations-File-Upload/upload/*.csv
+cd /opt/ontology/input/Annoations-File-Upload/upload
+
+for audname in *.csv
+do
+
+echo $audname
+
+
+DESTINATION='/opt/ontology/input/Annoations-File-Upload/upload'
+UPLOADED_FILE="$DESTINATION/$audname"
+	
+cat "$UPLOADED_FILE" | awk -v RS='"[^"]*"' -v ORS= '{gsub(/\n/, " ", RT); print $0  RT}' "$UPLOADED_FILE" > /opt/ontology/input/Annoations-File-Upload/upload/formattedFile1.csv
+
+PAT_FIL="/opt/ontology/input/Annoations-File-Upload/upload/formattedFile1.csv"
+
+ sed 's|CGFILENAME|'$PAT_FIL'|g' /opt/ontology/scripts/Annotations-dataload/dataload.ctl > /opt/ontology/scripts/Annotations-dataload/dataload_temp.ctl
+
+${SQLLOAD1} control=/opt/ontology/scripts/Annotations-dataload/dataload_temp.ctl,LOG=/opt/ontology/scripts/Annotations-dataload/Annotations-load.log,ERRORS=100
+
+done
+
+rm /opt/ontology/input/Annoations-File-Upload/upload/formattedFile1.csv
+gzip -c /opt/ontology/input/Annoations-File-Upload/upload/*.csv > /opt/ontology/input/Annoations-File-Upload/upload_zipfiles/upload$DATETIME.gz
+rm /opt/ontology/input/Annoations-File-Upload/upload/*.csv
+
+else
+    echo The directory $target is empty '(or non-existent)' >> /opt/ontology/scripts/Annotations-dataload/Annotations-load.log
+fi 
+
+ ${SQL1} << EOF 
+       
+delete from PRT_U_ANNOTATION where INSERTION_DATE <= sysdate -1;
+commit;
+
+EOF
+
+
+
+
