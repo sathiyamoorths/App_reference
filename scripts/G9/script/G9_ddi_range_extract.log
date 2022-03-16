@@ -1,0 +1,376 @@
+++ date +%Y%m%d_%H%M%S
++ DATETIME=20210507_124501
+++ date +%Y%m%d_%H%M%S
++ echo 'Starting the script 20210507_124501'
+Starting the script 20210507_124501
++ BASE_PATH=/opt/ontology/scripts/G9
++ SWITCH_LIST=/opt/ontology/scripts/G9/script/switch_list.txt
++ DATA_PATH=/opt/ontology/scripts/G9/input/DMS_Data
++ PROCESSED_PATH=/opt/ontology/scripts/G9/processed
++ SCRIPT_PATH=/opt/ontology/scripts/G9/script
++ . /opt/ontology/scripts/G9/script/python_db_config.env
+++ export ORACLE_BASE=/opt/oracle
+++ ORACLE_BASE=/opt/oracle
+++ export ORACLE_TERM=vt100
+++ ORACLE_TERM=vt100
+++ export ORACLE_HOME=/opt/oracle/product/12.1.0.client
+++ ORACLE_HOME=/opt/oracle/product/12.1.0.client
+++ export LD_LIBRARY_PATH=:/opt/oracle/product/12.1.0.client/lib
+++ LD_LIBRARY_PATH=:/opt/oracle/product/12.1.0.client/lib
+++ export PATH=/usr/bin:/bin:/opt/oracle/product/12.1.0.client/bin
+++ PATH=/usr/bin:/bin:/opt/oracle/product/12.1.0.client/bin
+++ export ORACLE_SID=CPTAD1
+++ ORACLE_SID=CPTAD1
+++ export TERM=vt100
+++ TERM=vt100
+++ export EDITOR=/bin/vi
+++ EDITOR=/bin/vi
+++ SQL='/opt/oracle/product/12.1.0.client/bin/sqlplus -s pr_user/moon55@ONTYD2-DB.hosts.plc.cwintra.com/ONTYD2'
+++ SQLLOAD='/opt/oracle/product/12.1.0.client/bin/sqlldr pr_user/moon55@ONTYD2-DB.hosts.plc.cwintra.com/ONTYD2'
+++ EXCEL_DIR=/opt/SP/osnadmin/ohs/Middleware/oracle/instances/instance1/config/OHS/ohs1/htdocs/osn-doc/docs_excel
++ read line
++ echo 'CLLI files: Y1'
+CLLI files: Y1
++ CLLI_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Y1_clli.cap
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y1_CLLI_PROCESSED
++ awk '-F ' '{ if (length($1)==12) print $1"|"$4}' /opt/ontology/scripts/G9/input/DMS_Data/Y1_clli.cap
+awk: fatal: cannot open file `/opt/ontology/scripts/G9/input/DMS_Data/Y1_clli.cap' for reading (No such file or directory)
++ read line
++ echo 'CLLI files: Y2'
+CLLI files: Y2
++ CLLI_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Y2_clli.cap
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y2_CLLI_PROCESSED
++ awk '-F ' '{ if (length($1)==12) print $1"|"$4}' /opt/ontology/scripts/G9/input/DMS_Data/Y2_clli.cap
+awk: fatal: cannot open file `/opt/ontology/scripts/G9/input/DMS_Data/Y2_clli.cap' for reading (No such file or directory)
++ read line
++ echo 'CLLI files: Z5'
+CLLI files: Z5
++ CLLI_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z5_clli.cap
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z5_CLLI_PROCESSED
++ awk '-F ' '{ if (length($1)==12) print $1"|"$4}' /opt/ontology/scripts/G9/input/DMS_Data/Z5_clli.cap
+awk: fatal: cannot open file `/opt/ontology/scripts/G9/input/DMS_Data/Z5_clli.cap' for reading (No such file or directory)
++ read line
++ echo 'CLLI files: Z6'
+CLLI files: Z6
++ CLLI_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z6_clli.cap
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z6_CLLI_PROCESSED
++ awk '-F ' '{ if (length($1)==12) print $1"|"$4}' /opt/ontology/scripts/G9/input/DMS_Data/Z6_clli.cap
+awk: fatal: cannot open file `/opt/ontology/scripts/G9/input/DMS_Data/Z6_clli.cap' for reading (No such file or directory)
++ read line
++ echo 'CLLI files: Z7'
+CLLI files: Z7
++ CLLI_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z7_clli.cap
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z7_CLLI_PROCESSED
++ awk '-F ' '{ if (length($1)==12) print $1"|"$4}' /opt/ontology/scripts/G9/input/DMS_Data/Z7_clli.cap
+awk: fatal: cannot open file `/opt/ontology/scripts/G9/input/DMS_Data/Z7_clli.cap' for reading (No such file or directory)
++ read line
++ echo 'CLLI files: Z8'
+CLLI files: Z8
++ CLLI_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z8_clli.cap
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z8_CLLI_PROCESSED
++ awk '-F ' '{ if (length($1)==12) print $1"|"$4}' /opt/ontology/scripts/G9/input/DMS_Data/Z8_clli.cap
+awk: fatal: cannot open file `/opt/ontology/scripts/G9/input/DMS_Data/Z8_clli.cap' for reading (No such file or directory)
++ read line
++ echo 'CLLI files: Z9'
+CLLI files: Z9
++ CLLI_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z9_clli.cap
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z9_CLLI_PROCESSED
++ awk '-F ' '{ if (length($1)==12) print $1"|"$4}' /opt/ontology/scripts/G9/input/DMS_Data/Z9_clli.cap
+awk: fatal: cannot open file `/opt/ontology/scripts/G9/input/DMS_Data/Z9_clli.cap' for reading (No such file or directory)
++ read line
++ '[' -n '' ']'
++ read line
++ echo 'TRKGRP files : Y1'
+TRKGRP files : Y1
+++ echo Y1
++ switch=Y1
++ TRKGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Y1_trkgr.cap
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y1_CLLI_PROCESSED
++ TRKSGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Y1_trksg.cap
++ rm /opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED’: No such file or directory
+++ cat /opt/ontology/scripts/G9/processed/Y1_CLLI_PROCESSED
++ read line
++ echo 'TRKGRP files : Y2'
+TRKGRP files : Y2
+++ echo Y2
++ switch=Y2
++ TRKGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Y2_trkgr.cap
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y2_CLLI_PROCESSED
++ TRKSGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Y2_trksg.cap
++ rm /opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED’: No such file or directory
+++ cat /opt/ontology/scripts/G9/processed/Y2_CLLI_PROCESSED
++ read line
++ echo 'TRKGRP files : Z5'
+TRKGRP files : Z5
+++ echo Z5
++ switch=Z5
++ TRKGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z5_trkgr.cap
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z5_CLLI_PROCESSED
++ TRKSGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z5_trksg.cap
++ rm /opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED’: No such file or directory
+++ cat /opt/ontology/scripts/G9/processed/Z5_CLLI_PROCESSED
++ read line
++ echo 'TRKGRP files : Z6'
+TRKGRP files : Z6
+++ echo Z6
++ switch=Z6
++ TRKGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z6_trkgr.cap
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z6_CLLI_PROCESSED
++ TRKSGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z6_trksg.cap
++ rm /opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED’: No such file or directory
+++ cat /opt/ontology/scripts/G9/processed/Z6_CLLI_PROCESSED
++ read line
++ echo 'TRKGRP files : Z7'
+TRKGRP files : Z7
+++ echo Z7
++ switch=Z7
++ TRKGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z7_trkgr.cap
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z7_CLLI_PROCESSED
++ TRKSGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z7_trksg.cap
++ rm /opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED’: No such file or directory
+++ cat /opt/ontology/scripts/G9/processed/Z7_CLLI_PROCESSED
++ read line
++ echo 'TRKGRP files : Z8'
+TRKGRP files : Z8
+++ echo Z8
++ switch=Z8
++ TRKGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z8_trkgr.cap
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z8_CLLI_PROCESSED
++ TRKSGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z8_trksg.cap
++ rm /opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED’: No such file or directory
+++ cat /opt/ontology/scripts/G9/processed/Z8_CLLI_PROCESSED
++ read line
++ echo 'TRKGRP files : Z9'
+TRKGRP files : Z9
+++ echo Z9
++ switch=Z9
++ TRKGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z9_trkgr.cap
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED
++ CLLI_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z9_CLLI_PROCESSED
++ TRKSGRP_FILE=/opt/ontology/scripts/G9/input/DMS_Data/Z9_trksg.cap
++ rm /opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED’: No such file or directory
+++ cat /opt/ontology/scripts/G9/processed/Z9_CLLI_PROCESSED
++ read line
++ '[' -n '' ']'
++ ALL_SUPERTKG_MERGED=/opt/ontology/scripts/G9/processed/ALL_SWITCH_SUPERTKG_MERGED
++ rm /opt/ontology/scripts/G9/processed/ALL_SWITCH_SUPERTKG_MERGED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/ALL_SWITCH_SUPERTKG_MERGED’: No such file or directory
++ cd /opt/ontology/scripts/G9/input/DMS_Data
+++ ls -1 '*_super.cap'
+ls: cannot access *_super.cap: No such file or directory
++ ALL_OFCRTE_MERGED=/opt/ontology/scripts/G9/processed/ALL_SWITCH_OFCRTE_MERGED
++ rm /opt/ontology/scripts/G9/processed/ALL_SWITCH_OFCRTE_MERGED
++ cd /opt/ontology/scripts/G9/input/DMS_Data
+++ ls -1 '*_ofrte.cap'
+ls: cannot access *_ofrte.cap: No such file or directory
+++ ls -1 '*_ftrte.cap'
+ls: cannot access *_ftrte.cap: No such file or directory
++ cd /opt/ontology/scripts/G9/processed
++ awk '{print substr(FILENAME,1, 2) " " $LINE}' '*_ofrte.cap_TEMP'
+awk: fatal: cannot open file `*_ofrte.cap_TEMP' for reading (No such file or directory)
++ rm '*_ofrte.cap_TEMP'
+rm: cannot remove ‘*_ofrte.cap_TEMP’: No such file or directory
++ cd /opt/ontology/scripts/G9/processed
++ awk '{print substr(FILENAME,1, 2) " " $LINE}' '*_ftrte.cap_TEMP'
+awk: fatal: cannot open file `*_ftrte.cap_TEMP' for reading (No such file or directory)
++ rm '*_ftrte.cap_TEMP'
+rm: cannot remove ‘*_ftrte.cap_TEMP’: No such file or directory
++ ALL_OFCCODE_MERGED=/opt/ontology/scripts/G9/processed/ALL_SWITCH_RTE_OFCCODE_MERGED
++ rm /opt/ontology/scripts/G9/processed/ALL_SWITCH_RTE_OFCCODE_MERGED
++ cd /opt/ontology/scripts/G9/input/DMS_Data
++ awk '{print substr(FILENAME,1, 2) " " $LINE}' '*_ofcde.cap'
+awk: fatal: cannot open file `*_ofcde.cap' for reading (No such file or directory)
++ cd /opt/ontology/scripts/G9/input/DMS_Data
++ awk '/OFCXLA/{print substr(FILENAME,1, 2) " " $LINE}' '*_o2cde.cap'
+awk: fatal: cannot open file `*_o2cde.cap' for reading (No such file or directory)
++ cd /opt/ontology/scripts/G9/input/DMS_Data
++ awk '/DTSADXLA/{print substr(FILENAME,1, 2) " " $LINE}' '*_ftcde.cap'
+awk: fatal: cannot open file `*_ftcde.cap' for reading (No such file or directory)
++ cd /opt/ontology/scripts/G9/input/DMS_Data
++ awk '{print substr(FILENAME,1, 2) " " $LINE}' '*_c2cde.cap'
+awk: fatal: cannot open file `*_c2cde.cap' for reading (No such file or directory)
++ cd /opt/ontology/scripts/G9/input/DMS_Data
++ awk '{print substr(FILENAME,1, 2) " " $LINE}' '*_p2cde.cap'
+awk: fatal: cannot open file `*_p2cde.cap' for reading (No such file or directory)
++ cd /opt/ontology/scripts/G9/processed
++ ALL_SUPERTKG_PROCESSED=/opt/ontology/scripts/G9/processed/ALL_SUPERTKG_PROCESSED
++ rm /opt/ontology/scripts/G9/processed/ALL_SUPERTKG_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/ALL_SUPERTKG_PROCESSED’: No such file or directory
++ read line
++ echo 'SUPERTKG files : Y1'
+SUPERTKG files : Y1
+++ echo Y1
++ switch=Y1
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'SUPERTKG files : Y2'
+SUPERTKG files : Y2
+++ echo Y2
++ switch=Y2
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'SUPERTKG files : Z5'
+SUPERTKG files : Z5
+++ echo Z5
++ switch=Z5
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'SUPERTKG files : Z6'
+SUPERTKG files : Z6
+++ echo Z6
++ switch=Z6
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'SUPERTKG files : Z7'
+SUPERTKG files : Z7
+++ echo Z7
++ switch=Z7
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'SUPERTKG files : Z8'
+SUPERTKG files : Z8
+++ echo Z8
++ switch=Z8
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'SUPERTKG files : Z9'
+SUPERTKG files : Z9
+++ echo Z9
++ switch=Z9
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED: No such file or directory
++ read line
++ '[' -n '' ']'
++ cd /opt/ontology/scripts/G9/processed
++ ALL_OFCRTE_PROCESSED=/opt/ontology/scripts/G9/processed/ALL_OFCRTE_PROCESSED
++ rm /opt/ontology/scripts/G9/processed/ALL_OFCRTE_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/ALL_OFCRTE_PROCESSED’: No such file or directory
++ read line
++ echo 'OFCRTE files for TRKGRP_FILE_PROCESSED: Y1'
+OFCRTE files for TRKGRP_FILE_PROCESSED: Y1
+++ echo Y1
++ switch=Y1
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Y1_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'OFCRTE files for TRKGRP_FILE_PROCESSED: Y2'
+OFCRTE files for TRKGRP_FILE_PROCESSED: Y2
+++ echo Y2
++ switch=Y2
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Y2_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'OFCRTE files for TRKGRP_FILE_PROCESSED: Z5'
+OFCRTE files for TRKGRP_FILE_PROCESSED: Z5
+++ echo Z5
++ switch=Z5
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z5_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'OFCRTE files for TRKGRP_FILE_PROCESSED: Z6'
+OFCRTE files for TRKGRP_FILE_PROCESSED: Z6
+++ echo Z6
++ switch=Z6
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z6_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'OFCRTE files for TRKGRP_FILE_PROCESSED: Z7'
+OFCRTE files for TRKGRP_FILE_PROCESSED: Z7
+++ echo Z7
++ switch=Z7
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z7_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'OFCRTE files for TRKGRP_FILE_PROCESSED: Z8'
+OFCRTE files for TRKGRP_FILE_PROCESSED: Z8
+++ echo Z8
++ switch=Z8
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z8_TRKGRP_PROCESSED: No such file or directory
++ read line
++ echo 'OFCRTE files for TRKGRP_FILE_PROCESSED: Z9'
+OFCRTE files for TRKGRP_FILE_PROCESSED: Z9
+++ echo Z9
++ switch=Z9
++ TRKGRP_FILE_PROCESSED=/opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/Z9_TRKGRP_PROCESSED: No such file or directory
++ read line
++ '[' -n '' ']'
++ cd /opt/ontology/scripts/G9/processed
++ echo 'OFCRTE files for ALL_SUPERTKG_PROCESSED'
+OFCRTE files for ALL_SUPERTKG_PROCESSED
+++ cat /opt/ontology/scripts/G9/processed/ALL_SUPERTKG_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/ALL_SUPERTKG_PROCESSED: No such file or directory
++ cd /opt/ontology/scripts/G9/processed
++ ALL_OFCCODE_PROCESSED=/opt/ontology/scripts/G9/processed/ALL_OFCCODE_PROCESSED
++ rm /opt/ontology/scripts/G9/processed/ALL_OFCCODE_PROCESSED
+rm: cannot remove ‘/opt/ontology/scripts/G9/processed/ALL_OFCCODE_PROCESSED’: No such file or directory
++ echo 'OFCCODE files'
+OFCCODE files
+++ cat /opt/ontology/scripts/G9/processed/ALL_OFCRTE_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/ALL_OFCRTE_PROCESSED: No such file or directory
++ cd /opt/ontology/scripts/G9/processed
++ cat '*_TRKGRP_PROCESSED'
+cat: *_TRKGRP_PROCESSED: No such file or directory
++ cat /opt/ontology/scripts/G9/processed/ALL_OFCCODE_PROCESSED
++ cut '-d|' -f1-5
+cat: /opt/ontology/scripts/G9/processed/ALL_OFCCODE_PROCESSED: No such file or directory
++ sort -k1,1 -k2,2 -u ALL_TRKGRP_PROCESSED_MERGED_TEMP
++ sort -k1,1 -k2,2 -u ALL_OFCCODE_PROCESSED_TEMP
++ comm -23 ALL_TRKGRP_PROCESSED_MERGED_SORTED_TEMP ALL_OFCCODE_PROCESSED_SORTED_TEMP
++ rm ALL_TRKGRP_PROCESSED_MERGED_TEMP
++ rm ALL_OFCCODE_PROCESSED_TEMP
++ rm ALL_TRKGRP_PROCESSED_MERGED_SORTED_TEMP
++ rm ALL_OFCCODE_PROCESSED_SORTED_TEMP
++ FINAL_RESULT=/opt/ontology/scripts/G9/processed/FINAL_RESULT.pipe
++ cat /opt/ontology/scripts/G9/processed/ALL_OFCCODE_PROCESSED
+cat: /opt/ontology/scripts/G9/processed/ALL_OFCCODE_PROCESSED: No such file or directory
++ awk '{print $LINE"|||||"}' FINAL_RANGE_NOT_FOUND
++ cd /opt/ontology/scripts/G9/script
++ /opt/oracle/product/12.1.0.client/bin/sqlldr pr_user/moon55@ONTYD2-DB.hosts.plc.cwintra.com/ONTYD2 data=/opt/ontology/scripts/G9/processed/FINAL_RESULT.pipe, control=G9_ddi_range_extract.ctl, LOG=load_final_result.log, ERRORS=100
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Fri May 7 12:45:01 2021
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Path used:      Conventional
+
+Table G9_DMS_DUMP:
+  0 Rows successfully loaded.
+
+Check the log file:
+  load_final_result.log
+for more information about the load.
